@@ -1,0 +1,88 @@
+@import "../../scss/var.scss";
+.root {
+  height: 80px;
+  margin-top: 30px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  &.compact {
+    margin-top: 0;
+    height: 50px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+    max-width: 1320px;
+    margin: 0 auto;
+
+    @include breakpoint($mobile-bp) {
+      padding: 0 20px;
+    }
+    .logo {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin: auto 0;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      margin: auto 20px;
+      .link {
+        font-size: 1.4rem;
+        padding: 0 10px;
+        &.active,
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+    .auth {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin: auto 20px;
+      font-size: 16px;
+    }
+  }
+}
+.loginBtn {
+  font-size: inherit;
+  font-weight: inherit;
+  color: $cream;
+  cursor: pointer;
+  border: 2px solid $cream;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  background-color: $black;
+  &:hover {
+    background-color: $cream;
+    color: $black;
+  }
+}
+.registerBtn {
+  color: $cream;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    left: 0;
+    height: 2px;
+    background-color: $cream;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    &::after {
+      width: 0;
+    }
+  }
+}

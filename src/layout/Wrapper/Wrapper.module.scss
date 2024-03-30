@@ -1,0 +1,17 @@
+@import "../../scss/var.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  flex-wrap: wrap;
+  background-color: $background;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
