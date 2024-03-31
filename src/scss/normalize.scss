@@ -24,19 +24,19 @@ ul {
 
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: $lighten darken($gray, 20);
+  scrollbar-color: $white darken($lighten, 20);
 
   &::-webkit-scrollbar {
     height: 12px;
     width: 12px;
   }
   &::-webkit-scrollbar-track {
-    background: darken($gray, 20);
+    background: darken($lighten, 20);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $lighten;
+    background-color: $white;
     border-radius: 5px;
-    border: 3px solid darken($gray, 20);
+    border: 3px solid darken($lighten, 20);
   }
 }
 
@@ -59,7 +59,7 @@ h1,
 h2,
 h3,
 h4 {
-  text-align: center;
+  text-align: left;
 }
 
 a {

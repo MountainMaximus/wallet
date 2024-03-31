@@ -1,0 +1,31 @@
+@import "../../scss/var.scss";
+
+.root {
+  display: inline-block;
+  padding: 2vw 6vw;
+  font-size: 6vw;
+  background-color: $lighten;
+  color: $blue;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  border: none;
+  position: relative;
+  &::after {
+    display: none;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    border-radius: 0.6rem;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 2;
+  }
+  &:hover {
+    &::after {
+      display: block;
+    }
+  }
+}

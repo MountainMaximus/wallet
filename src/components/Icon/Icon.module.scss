@@ -1,0 +1,13 @@
+@import "../../scss/var.scss";
+
+.root {
+  width: 8vw;
+  height: 8vw;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 2vw;
+  cursor: pointer;
+  &:hover {
+    background-color: $lighten;
+  }
+}

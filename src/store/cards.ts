@@ -6,7 +6,7 @@ enum Status {
   error = "error",
   fulfilled = "fulfilled",
 }
-interface CompanyCard {
+export interface CompanyCard {
   company: {
     companyId: string;
   };
@@ -19,6 +19,13 @@ interface CompanyCard {
     logo: string;
     mainColor: `#${string}`;
     textColor: `#${string}`;
+  };
+  customerMarkParameters: {
+    loyaltyLevel: {
+      cashToMark: number;
+      name: string;
+    };
+    mark: number;
   };
 }
 interface AxiosData {

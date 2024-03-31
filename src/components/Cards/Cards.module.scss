@@ -1,1 +1,61 @@
 @import "../../scss/var.scss";
+.card {
+  width: 92vw;
+  border-radius: 4vw;
+  background-color: $white;
+  padding: 4vw;
+  margin-top: 4vw;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2vw;
+    margin-bottom: 4vw;
+    border-bottom: 2px solid;
+    .name {
+      font-size: 10vw;
+    }
+    .logo {
+      display: block;
+      height: 20vw;
+      width: auto;
+      border-radius: 50%;
+    }
+  }
+  .balance {
+    font-family: "SegoeUIBold";
+    font-size: 6vw;
+    margin-bottom: 4vw;
+    span {
+      margin-left: 2vw;
+      font-size: 4vw;
+    }
+  }
+  .bonuses {
+    display: flex;
+    padding-bottom: 2vw;
+    margin-bottom: 2vw;
+    border-bottom: 2px solid;
+    .bonus {
+      margin-right: 20vw;
+      &:last-child {
+        margin-right: 0;
+      }
+      display: flex;
+      flex-direction: column;
+      gap: 2vw;
+      .title {
+        font-size: 2vw;
+      }
+      .value {
+        font-size: 4vw;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12vw;
+  }
+}
