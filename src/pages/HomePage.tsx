@@ -1,9 +1,10 @@
 import React from "react";
+import { Cards } from "../components";
 
 export const HomePage: React.FC = () => {
-  React.useEffect(() => {
-    window.scroll(0, 0);
-  }, []);
-
-  return <div></div>;
+  return (
+    <div>
+      <Cards />
+    </div>
+  );
 };
