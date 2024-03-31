@@ -50,5 +50,16 @@
       border-radius: 5px;
       background-color: $lighten;
     }
+    &.compact {
+      bottom: auto;
+      left: auto;
+      top: 4vw;
+      right: 4vw;
+      transform: none;
+
+      &::after {
+        display: none;
+      }
+    }
   }
 }

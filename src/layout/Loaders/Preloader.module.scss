@@ -6,7 +6,8 @@
   height: 200px;
   @include breakpoint($tablet-bp) {
     @include breakpoint($tablet-bp) {
-      font-size: 6vw;
+      width: 20vw;
+      height: 20vw;
     }
   }
   position: relative;

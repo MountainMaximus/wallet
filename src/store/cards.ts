@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import axios from "./axios";
 import { AxiosError } from "axios";
-enum Status {
+export enum Status {
   loading = "loading",
   error = "error",
   fulfilled = "fulfilled",
@@ -42,7 +42,17 @@ class Cards {
   constructor() {
     makeAutoObservable(this);
   }
+  skipError() {
+    this.status = {
+      condition: Status.fulfilled,
+      message: "Загрузка успешна",
+    };
+  }
   async fetchCards() {
+    this.status = {
+      condition: Status.loading,
+      message: "Идет загрузка",
+    };
     try {
       const { data } = await axios.post<AxiosData>("/getAllCompanies", {
         offset: this.cards.length,
@@ -50,6 +60,12 @@ class Cards {
       });
       runInAction(() => {
         this.cards.push(...data.companies);
+        console.log("Загрузка успешна");
+
+        this.status = {
+          condition: Status.fulfilled,
+          message: "Загрузка успешна",
+        };
       });
     } catch (e) {
       const error = e as AxiosError;
@@ -70,6 +86,8 @@ class Cards {
             break;
           case 500:
             this.status = { condition: Status.error, message: "Все упало" };
+            console.log(this.status);
+
             break;
           default:
             throw e;

@@ -1,13 +1,34 @@
 import React from "react";
 import { Cards } from "../components";
-import cards from "../store/cards";
-export const HomePage: React.FC = () => {
+import { Preloader } from "../layout/Loaders/Preloader";
+import cards, { Status } from "../store/cards";
+import { Modal } from "../components/Modal";
+import { observer } from "mobx-react-lite";
+
+export const HomePage: React.FC = observer(() => {
   React.useEffect(() => {
     cards.fetchCards();
   }, []);
   return (
     <div>
       <Cards />
+      {cards.status.condition === Status.loading && <Preloader />}
+      {cards.status.condition === Status.error && (
+        <Modal
+          onClickClose={() => {
+            cards.skipError();
+          }}
+          onClickBtn={() => cards.fetchCards()}
+          btnText="Загрузить еще"
+        >
+          <img
+            style={{ width: "8vw" }}
+            src="/exclamation.png"
+            alt="exclamation"
+          />
+          <div>{cards.status.message}</div>
+        </Modal>
+      )}
     </div>
   );
-};
+});
