@@ -1,8 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+
 import styles from "./Wrapper.module.scss";
 import { Header } from "../../components";
-import { Refresh } from "../Loaders/Resresh";
+import { Refresh } from "../Loaders/Refresh";
 
 export const Wrapper: React.FC = () => {
   const [preload, setPreload] = React.useState(true);

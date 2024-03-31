@@ -1,8 +1,8 @@
 import React from "react";
+import classNames from "classnames";
 
 import styles from "./Modal.module.scss";
 import { Button } from "../Button";
-import classNames from "classnames";
 
 type ModalProps = {
   children: React.ReactNode;

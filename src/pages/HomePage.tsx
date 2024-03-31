@@ -1,9 +1,10 @@
 import React from "react";
+import { observer } from "mobx-react-lite";
+
 import { Cards } from "../components";
 import { Preloader } from "../layout/Loaders/Preloader";
 import cards, { Status } from "../store/cards";
 import { Modal } from "../components/Modal";
-import { observer } from "mobx-react-lite";
 
 export const HomePage: React.FC = observer(() => {
   React.useEffect(() => {

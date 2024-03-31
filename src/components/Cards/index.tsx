@@ -1,19 +1,17 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-import styles from "./Cards.module.scss";
+import { useInView } from "react-intersection-observer";
+
 import cards, { Status } from "../../store/cards";
 import { Card } from "./Card";
-import { useInView } from "react-intersection-observer";
 
 export const Cards: React.FC = observer(() => {
   const { ref, inView } = useInView({
     threshold: 0.9,
   });
-
   React.useEffect(() => {
     if (inView) cards.fetchCards();
   }, [inView, ref]);
-
   if (cards.cards.length === 0 && cards.status.condition !== Status.loading)
     return <div style={{ marginTop: "4vw" }}>Нет копаний</div>;
   return (

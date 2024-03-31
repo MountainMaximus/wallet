@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./Preloader.module.scss";
+
+import styles from "./Loaders.module.scss";
 
 export const SVG: React.FC<{ weight?: boolean }> = ({ weight }) => {
   return (

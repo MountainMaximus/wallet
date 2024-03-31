@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import React from "react";
+
 import { Wrapper } from "./layout/Wrapper";
 import "./scss/index.scss";
 import { HomePage } from "./pages";

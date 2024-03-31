@@ -1,4 +1,5 @@
 import React from "react";
+
 import styles from "./Cards.module.scss";
 import { CompanyCard } from "../../store/cards";
 import { Button } from "../Button";

@@ -60,8 +60,6 @@ class Cards {
       });
       runInAction(() => {
         this.cards.push(...data.companies);
-        console.log("Загрузка успешна");
-
         this.status = {
           condition: Status.fulfilled,
           message: "Загрузка успешна",
@@ -86,7 +84,6 @@ class Cards {
             break;
           case 500:
             this.status = { condition: Status.error, message: "Все упало" };
-            console.log(this.status);
 
             break;
           default:
@@ -96,5 +93,5 @@ class Cards {
     }
   }
 }
-
-export default new Cards();
+const cards = new Cards();
+export default cards;

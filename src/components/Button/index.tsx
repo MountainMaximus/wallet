@@ -1,6 +1,7 @@
 import React from "react";
+
 import styles from "./Button.module.scss";
-import { hover } from "@testing-library/user-event/dist/hover";
+
 interface IButton {
   children: React.ReactNode;
   onClick?: () => void;
