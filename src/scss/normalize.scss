@@ -4,27 +4,39 @@ button:focus {
 ul {
   list-style: none;
 }
+@font-face {
+  font-family: "SegoeUIBold";
+  src: local("SegoeUIBold"),
+    url(../fonts/SegoeUIBold/SegoeUIBold.woff) format("woff");
+}
+@font-face {
+  font-family: "SegoeUIRegular";
+  src: local("SegoeUIRegular"),
+    url(../fonts/SegoeUIRegular/SegoeUIRegular.woff) format("woff");
+}
 * {
   padding: 0;
   margin: 0;
   outline: none;
-  font-family: "Lobster", cursive;
+  font-family: "SegoeUIRegular";
+  font-weight: 500;
+  line-height: 1;
 
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: $cream darken($background, 20);
+  scrollbar-color: $lighten darken($gray, 20);
 
   &::-webkit-scrollbar {
     height: 12px;
     width: 12px;
   }
   &::-webkit-scrollbar-track {
-    background: darken($background, 20);
+    background: darken($gray, 20);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $cream;
+    background-color: $lighten;
     border-radius: 5px;
-    border: 3px solid darken($background, 20);
+    border: 3px solid darken($gray, 20);
   }
 }
 
@@ -38,8 +50,8 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 1.2rem;
   line-height: 1.2;
-  color: $white;
-  background-color: $background;
+  color: $black;
+  background-color: $white;
   overflow: auto;
 }
 
